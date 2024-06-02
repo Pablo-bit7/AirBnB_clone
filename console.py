@@ -4,6 +4,11 @@
 import cmd
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 import shlex
 
@@ -12,6 +17,15 @@ class HBNBCommand(cmd.Cmd):
     """Command interpreter for the HBNB project."""
 
     prompt = '(hbnb) '
+    classes = {
+        'BaseModel': BaseModel,
+        'User': User,
+        'State': State,
+        'City': City,
+        'Amenity': Amenity,
+        'Place': Place,
+        'Review': Review
+    }
 
     def do_quit(self, arg):
         """Quit command to exit the program."""
@@ -34,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         try:
-            cls = globals()[arg]
+            cls = self.classes[arg]
             instance = cls()
             instance.save()
             print(instance.id)
@@ -51,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         try:
-            cls = globals()[args[0]]
+            cls = self.classes[args[0]]
         except KeyError:
             print("** class doesn't exist **")
             return
@@ -72,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         try:
-            cls = globals()[args[0]]
+            cls = self.classes[args[0]]
         except KeyError:
             print("** class doesn't exist **")
             return
@@ -93,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
         """
         if arg:
             try:
-                cls = globals()[arg]
+                cls = self.classes[arg]
             except KeyError:
                 print("** class doesn't exist **")
                 return
@@ -115,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         try:
-            cls = globals()[args[0]]
+            cls = self.classes[args[0]]
         except KeyError:
             print("** class doesn't exist **")
             return
