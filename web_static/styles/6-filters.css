@@ -17,10 +17,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 30px;
 }
 
 .locations {
     border-right: 1px solid #DDDDDD;
+    margin-right: 30px;
 }
 
 .filters h3 {
@@ -43,6 +45,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .filters button:hover {
@@ -52,19 +55,19 @@
 .popover {
     display: none;
     position: absolute;
-    top: 70px;
-    left: 0;
+    top: 56px;
+    left: -31px;
     background-color: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-    width: 100%;
+    width: 96%;
     list-style: none;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .popover li {
     padding: 5px 0;
+    padding-left: 10px;
 }
 
 .popover h2 {
@@ -76,3 +79,4 @@
 .amenities:hover .popover {
     display: block;
 }
+
