@@ -1,0 +1,104 @@
+.places {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.places h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: left; /* Align title text to the left */
+    width: 100%;
+    padding-left: 20px; /* Add padding to align with container */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+.places article {
+    width: 390px;
+    height: 350px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.places article h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+}
+
+.price_by_night {
+    font-size: 25px;
+    font-weight: bold;
+    color: #FF5A5F;
+    border: 4.5px solid #FF5A5F;
+    border-radius: 40px;
+    min-width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.information {
+    height: 80px;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+    margin-top: 58px;
+}
+
+.information div {
+    width: 100px;
+    text-align: center;
+}
+
+.information div::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -30px; /* Position the icon above the text */
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.max_guest::before {
+    background-image: url('../images/guests_icon.png');
+}
+
+.number_rooms::before {
+    background-image: url('../images/beds_icon.png');
+}
+
+.number_bathrooms::before {
+    background-image: url('../images/baths_icon.png');
+}
+
+.user {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.user strong {
+    font-weight: bold;
+}
+
+.description {
+    text-align: left;
+}
